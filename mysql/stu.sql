@@ -30,7 +30,7 @@ CREATE TABLE `admininfo` (
 -- Records of admininfo
 -- ----------------------------
 INSERT INTO `admininfo` VALUES ('1', 'admin', 'admin');
-
+ALTER TABLE admininfo ADD COLUMN email VARCHAR(255) NOT NULL;
 -- ----------------------------
 -- Table structure for scoreinfo
 -- ----------------------------

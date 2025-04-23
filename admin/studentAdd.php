@@ -25,6 +25,17 @@ if ($_POST['xuehao']) {
     <title>学生成绩添加</title>
     <link rel="stylesheet" href="../common/css/layui.css"/>
     <script src="../common/layui.js"></script>
+    <style>
+       body {
+            background-image: url('../img/8.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .layui-table {
+            margin-left: 50px;
+        }
+    </style>
 </head>
 <body >
 <?php
@@ -86,13 +97,29 @@ include 'header.php';
                        class="layui-input">
             </div>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">家庭住址</label>
+            <div class="layui-input-block">
+                <input type="text" name="address" required lay-verify="required" placeholder="请输入家庭住址"
+                       autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">平均分</label>
+            <div class="layui-input-block">
+                <input type="text" name="score" required lay-verify="required" placeholder="请输入平均分"
+                       autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
 
         <div style="height: 50px;"></div>
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <a class="layui-btn" href="studentList.php">返回首页</a>
                 <button class="layui-btn" lay-submit lay-filter="formDemo">添加学生信息</button>
-                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <button type="reset" class="layui-btn ">重置</button>
             </div>
         </div>
     </div>

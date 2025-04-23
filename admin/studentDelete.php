@@ -114,6 +114,22 @@ if (isset($_GET['id'])) {
                         autocomplete="off" value="<?php echo $row1['classname']; ?>" readonly class="layui-input">
                 </div>
             </div>
+            <div class="layui-form-item">
+            <label class="layui-form-label">学生地址</label>
+            <div class="layui-input-block">
+                <input type="text" name="address" required lay-verify="required" placeholder="请输入学生地址"
+                       autocomplete="off" value="<?php echo $row1['address']; ?>"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">学生平均分</label>
+            <div class="layui-input-block">
+                <input type="text" name="score" required lay-verify="required" placeholder="请输入学生平均分"
+                       autocomplete="off" value="<?php echo $row1['score']; ?>"
+                       class="layui-input">
+            </div>
+        </div>
             <div style="height: 50px;"></div>
             <div class="layui-form-item">
                 <div class="layui-input-block">

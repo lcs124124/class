@@ -15,7 +15,17 @@ if (!isset($_SESSION['username'])) {
     <title>学生信息查询</title>
     <link rel="stylesheet" href="../common/css/layui.css"/>
     <script src="../common/layui.js"></script>
-
+    <style>
+        body {
+            background-image: url('../img/8.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .layui-table {
+            margin-left: 50px;
+        }
+    </style>
 </head>
 <body>
 <?php
@@ -49,6 +59,8 @@ include 'header.php';
             <td>性别</td>
             <td>班级</td>
             <td>电话</td>
+            <td>家庭住址</td>
+            <td>平均分</td>
         </tr>
         <?php
 	require("../conn.php");
@@ -70,6 +82,8 @@ include 'header.php';
                 <td><?php echo $row['sex']; ?></td>
                 <td><?php echo $row['classname']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
+                <td><?php echo $row['address']; ?></td>
+                <td><?php echo $row['score']; ?></td>
             </tr>
             <?php
         }
@@ -83,16 +97,3 @@ include 'header.php';
 </body>
 </html>
 
-<!-- <form class="layui-form" action="studentsearch.php" method="post" style="">
-    <div class="layui-col-md12" style="padding-right: 80px;border: 1px solid #ccc;">
-        <div class="layui-form-item">
-            <label class="layui-form-label">请输入学生姓名</label>
-            <div class="layui-input-block">
-                <input type="text" name="keywords" required lay-verify="required" placeholder="请输入学生姓名" maxlength="11"
-                       autocomplete="off"
-                       class="layui-input">
-            </div>
-        </div>
-    </div>
-    <input type="submit" value="搜索" class="btn">
-</form> -->

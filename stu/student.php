@@ -8,8 +8,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('https://picsum.photos/1920/1080');
-            background-size: cover;
+            background-image: url('../img/8.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width:100%;
+            height: 100%;
+            overflow-y:hidden;
+    
+           /* background-size: cover;*/
             background-position: center;
             background-attachment: fixed;
             font-family: 'Inter', sans-serif;
@@ -153,6 +159,35 @@
     $sql2 = "select * from scoreinfo where xuehao='$xuehao'";
     $result2 = $db->query($sql2);
     $row2 = $result2->fetch_array();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['update_info'])) {
+            $username = $_POST['username'];
+            $sex = $_POST['sex'];
+            $xueyuan = $_POST['xueyuan'];
+            $classname = $_POST['classname'];
+            $phone = $_POST['phone'];
+
+            $update_info_sql = "UPDATE studentinfo SET username='$username', sex='$sex', xueyuan='$xueyuan', classname='$classname', phone='$phone' WHERE xuehao='$xuehao'";
+            $db->query($update_info_sql);
+
+            echo "<script>alert('信息更新成功');</script>";
+            echo "<script>window.location.href='student.php';</script>";
+        }
+
+        if (isset($_POST['update_score'])) {
+            $android = $_POST['android'];
+            $j2ee = $_POST['j2ee'];
+            $php = $_POST['php'];
+            $javascript = $_POST['javascript'];
+
+            $update_score_sql = "UPDATE scoreinfo SET android='$android', j2ee='$j2ee', php='$php', javascript='$javascript' WHERE xuehao='$xuehao'";
+            $db->query($update_score_sql);
+
+            echo "<script>alert('成绩更新成功');</script>";
+            echo "<script>window.location.href='student.php';</script>";
+        }
+    }
     ?>
     <div class="sidebar" id="sidebar">
         <button class="sidebar-toggle" id="sidebar-toggle">
@@ -160,56 +195,70 @@
         </button>
         <?php include 'navstu.php'; ?>
     </div>
-    <div class="content" id="content">
+    <div class="content" id="content" >
         <div class="table-container">
             <h1>学生个人信息</h1>
-            <table class="table-auto w-full border-collapse border border-gray-300">
-                <tr>
-                    <th class="border border-gray-300 w-1/4">学号</th>
-                    <td class="border border-gray-300"><?php echo $row1['xuehao']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">姓名</th>
-                    <td class="border border-gray-300"><?php echo $row1['username']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">性别</th>
-                    <td class="border border-gray-300"><?php echo $row1['sex']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">学院</th>
-                    <td class="border border-gray-300"><?php echo $row1['xueyuan']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">班级</th>
-                    <td class="border border-gray-300"><?php echo $row1['classname']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">电话</th>
-                    <td class="border border-gray-300"><?php echo $row1['phone']; ?></td>
-                </tr>
-            </table>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <table class="table-auto w-full border-collapse border border-gray-300">
+                    <tr>
+                        <th class="border border-gray-300 w-1/4">学号</th>
+                        <td class="border border-gray-300"><?php echo $row1['xuehao']; ?></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">姓名</th>
+                        <td class="border border-gray-300"><input type="text" name="username" value="<?php echo $row1['username']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">性别</th>
+                        <td class="border border-gray-300"><input type="text" name="sex" value="<?php echo $row1['sex']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">学院</th>
+                        <td class="border border-gray-300"><input type="text" name="xueyuan" value="<?php echo $row1['xueyuan']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">班级</th>
+                        <td class="border border-gray-300"><input type="text" name="classname" value="<?php echo $row1['classname']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">电话</th>
+                        <td class="border border-gray-300"><input type="text" name="phone" value="<?php echo $row1['phone']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <input type="submit" name="update_info" value="修改信息" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
         <div class="table-container">
             <h1>学生个人成绩</h1>
-            <table class="table-auto w-full border-collapse border border-gray-300">
-                <tr>
-                    <th class="border border-gray-300 w-1/4">Android成绩</th>
-                    <td class="border border-gray-300"><?php echo $row2['android']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">J2EE成绩</th>
-                    <td class="border border-gray-300"><?php echo $row2['j2ee']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">PHP成绩</th>
-                    <td class="border border-gray-300"><?php echo $row2['php']; ?></td>
-                </tr>
-                <tr>
-                    <th class="border border-gray-300">JavaScript成绩</th>
-                    <td class="border border-gray-300"><?php echo $row2['javascript']; ?></td>
-                </tr>
-            </table>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <table class="table-auto w-full border-collapse border border-gray-300">
+                    <tr>
+                        <th class="border border-gray-300 w-1/4">Android成绩</th>
+                        <td class="border border-gray-300"><input type="text" name="android" value="<?php echo $row2['android']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">J2EE成绩</th>
+                        <td class="border border-gray-300"><input type="text" name="j2ee" value="<?php echo $row2['j2ee']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">PHP成绩</th>
+                        <td class="border border-gray-300"><input type="text" name="php" value="<?php echo $row2['php']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <th class="border border-gray-300">JavaScript成绩</th>
+                        <td class="border border-gray-300"><input type="text" name="javascript" value="<?php echo $row2['javascript']; ?>"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <input type="submit" name="update_score" value="修改成绩" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </div>
     <script>
@@ -230,3 +279,4 @@
 </body>
 
 </html>
+    

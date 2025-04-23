@@ -1,5 +1,5 @@
 
-<div class="layui-header"style="background:rgb(47,64,86);margin-left:199px;">
+<div class="layui-header"style="background: rgba(91, 130, 183, 0.9);margin-left:199px;">
     <ul class="layui-nav layui-layout-right layui-bg-cyan">
         <img style="width:50px; height:50px; border-radius:50%;outline-style: auto;" class="tupian" src="./touxiang/1.jpg">
         <li class="layui-nav-item layui-hide layui-show-md-inline-block">

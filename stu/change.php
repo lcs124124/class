@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('https://picsum.photos/1920/1080');
+            background-image: url('../img/8.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;

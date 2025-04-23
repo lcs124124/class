@@ -15,10 +15,8 @@ if($_POST['role']=='admin'){
             // echo '<h1 style="color: red;text-align: center;">用户名或者密码错误！</h1>';
             echo "<script>alert('用户名或者密码错误！');</script>";
         }
+}   
 }
-    
-}
-
 if($_POST['role']=='stu'){
     if ($_POST['username']) {
         $sql = "select * from studentinfo where xuehao='$_POST[username]' and password='$_POST[loginPW]' ";
@@ -31,15 +29,9 @@ if($_POST['role']=='stu'){
             // echo '<h1 style="color: red;text-align: center;">用户名或者密码错误！</h1>';
             echo "<script>alert('用户名或者密码错误！');</script>";
         }
-}
-   
-}
-    
+}  
+}   
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +42,7 @@ if($_POST['role']=='stu'){
     <script src="common/layui.js"></script>
     <style>
         body{
-        background-image: url(img/8.jpg);background-repeat: no-repeat;background-size: 100%;width:100%;height: 100%;overflow-y:hidden;
+        background-image: url(img/9.jpg);background-repeat: no-repeat;background-size: 100%;width:100%;height: 100%;overflow-y:hidden;
     }
     @keyframes pane-left{
     0% {
@@ -101,7 +93,6 @@ if($_POST['role']=='stu'){
                        autocomplete="off" class="layui-input">
             </div>
         </div>
-        
         <div class="layui-form-item">
     <label class="layui-form-label">登录方式</label>
     <div class="layui-input-block">
@@ -114,20 +105,17 @@ if($_POST['role']=='stu'){
                 <button class="layui-btn layui-btn-radius" type="submit" id="denglu">登录</button>
                 <button class="layui-btn layui-btn-radius layui-btn-primary" type="reset">重置</button>
                 <!-- <button class="layui-btn layui-btn-radius layui-btn-warm" onclick="window.location.href='register.php'">注册</button> -->
-                &nbsp&nbsp您还没有账号？ <a id="reg" href="register.php">立即注册</a>
+                &nbsp&nbsp您还没有账号？ <a id="reg" href="register.php">立即注册</a><a id="email" href="find_password.php">找回管理员密码</a>
             </div>
         </div>
-    </form>
-         
+    </form>   
 </div>
-
 <style>
 	h1 {
   height: 10px;
   color: #1e9fff;
   margin-top: 15px;
 }
-
 </style>
 <script type="text/javascript">
     layui.use(['form', 'laydate'], function () {
