@@ -25,7 +25,7 @@
         <li class="layui-nav-item"><a href="studentList.php">学生表</a></li> 
         <li class="layui-nav-item"><a href="studentAdd.php">添加学生</a></li> 
         <li class="layui-nav-item"><a href="studentsearch.php">查询学生</a></li> 
-        <li class="layui-nav-item"><a href="../loginout.php">退出登录  <i class="layui-icon layui-icon-tips" style="font-size: 15px;"></i></a></li>
+        <li class="layui-nav-item"><a href="../loginout.php">注销登录  <i class="layui-icon layui-icon-tips" style="font-size: 15px;"></i></a></li>
     </ul>
     <script>
         layui.use('element', function () {
