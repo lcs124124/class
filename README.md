@@ -1,34 +1,35 @@
+![alt text](./img/image.png)
 结果截图
 登录页面
-![alt text](./img/image.png)
+![alt text](./img/image-13.jpg)
 个人信息展示跟修改功能
-![alt text](./image-16.png)
+![alt text](./img/image-16.jpg)
 班级信息
-![alt text](./image-15.png)
+![alt text](./img/image-15.jpg)
 修改密码
-![alt text](./image-14.png)
+![alt text](./img/image-14.jpg)
 管理员功能页面
 管理员登录
-![alt text](./image-13.png)
+![alt text](./img/image-13.jpg)
 管理员注册
-![alt text](./image-12.png)
+![alt text](./img/image-12.jpg)
 找回密码
-![alt text](./image-11.png)
+![alt text](./img/image-11.jpg)
 注销功能
-![alt text](./image-10.png)
-![alt text](./image-9.png)
+![alt text](./img/image-10.jpg)
+![alt text](./img/image-9.jpg)
 信息展示（学生列表）
-![alt text](./image-8.png)
+![alt text](./img/image-8.jpg)
 添加学生信息
-![alt text](./image-7.png)
+![alt text](./img/image-7.jpg)
 删除学生信息
-![alt text](./image-6.png)
+![alt text](./img/image-6.jpg)
 修改学生信息
-![alt text](./image-5.png)
+![alt text](./img/image-5.jpg)
 查询学生信息
-![alt text](./-4.png)
-![alt text](./image-3.png)
+![alt text](./img/image-4.jpg)
+![alt text](./img/image-3.jpg)
 修改密码
-![alt text](./image-2.png)
+![alt text](./img/image-2.jpg)
 修改头像
-![alt text](./image-1.png)
+![alt text](./img/image-1.jpg)
